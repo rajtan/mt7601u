@@ -280,11 +280,11 @@ typedef struct file* RTMP_OS_FD;
 typedef struct _OS_FS_INFO_
 {
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(3,12,0)
-	uid_t				fsuid;
-	gid_t				fsgid;
-#else
 	kuid_t				fsuid;
 	kgid_t				fsgid;
+#else
+	uid_t				fsuid;
+	gid_t				fsgid;
 #endif
 	mm_segment_t	fs;
 } OS_FS_INFO;
